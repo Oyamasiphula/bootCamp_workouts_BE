@@ -1,0 +1,25 @@
+{
+  "name": "bootcamp_workouts_be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.10.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oyamasiphula/bootCamp_workouts_BE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oyamasiphula/bootCamp_workouts_BE/issues"
+  },
+  "homepage": "https://github.com/Oyamasiphula/bootCamp_workouts_BE#readme",
+  "description": ""
+}
