@@ -10,16 +10,16 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
-app.get("/", function (req,res) {
+app.get("/", function (req, res) {
     res.render("home");
 });
 //eg. dynamically routing
-app.get("/home", function (req,res) {
+app.get("/home", function (req, res) {
     res.redirect("/");
 });
 
-app.get("greet",function(){
-
+app.get("/greet",function(req, res){
+  res.render("greet")
 })
 
 var port = process.env.port || 3000;
