@@ -20,6 +20,11 @@ body {
     position: relative;
 }
 
+div .row {
+    clear: both;
+    margin: auto;
+    position: inherit;
+}
 #container {
     position: initial;
     background-size: contain;
