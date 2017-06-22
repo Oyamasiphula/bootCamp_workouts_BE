@@ -25,6 +25,7 @@ div .row {
     margin: auto;
     position: inherit;
 }
+
 #container {
     position: initial;
     background-size: contain;
@@ -151,8 +152,11 @@ section {
 
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
     color: #FFF;
-    background-color: #402222;
     border-color: #33C3F0;
+
+}
+a {
+     color: #402222;
 }
 
 .formButt {
@@ -161,11 +165,9 @@ section {
     margin-left: auto;
 }
 
-div.container form input {
+input#specifyName.u-full-width {
     text-align: center;
     margin: auto;
-    display: block;
-    height: 38px;
     padding: 6px 10px;
     background-color: #fff;
     border: 1px solid #D1D1D1;
@@ -173,7 +175,6 @@ div.container form input {
     box-shadow: none;
     box-sizing: border-box;
     margin-left: auto;
-    width: 30%;
 }
 
 input.date1, input.date2 {
@@ -366,9 +367,11 @@ select {
 }
 
 form {
+    display: grid;
     text-align: -webkit-center;
     background: cornflowerblue;
     border: 10px dashed #4855ae;
+    margin: auto;
 }
 
 .hide_cont {
