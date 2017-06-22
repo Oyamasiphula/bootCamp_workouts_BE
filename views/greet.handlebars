@@ -13,10 +13,12 @@
 
             <div class="row">
                 <div class="messages">
-                    {{#each greetedPerson}}
-                    <pre id="specificNameDisplay">{{this.name}}</pre>
-                    {{/each}}
+                    {{#greetedPerson}}
+                    <pre id="specificNameDisplay">{{this}}</pre>
+                    {{/greetedPerson}}
+
                     <pre id="totalNumOfGreetings"></pre>
+                    
                     <input id="resetButton" class="button-primary" type="reset" value="reset"/>
                 </div>
 
