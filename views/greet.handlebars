@@ -1,26 +1,30 @@
 <div class="row">
     <div class="two columns"></div>
-    <form class="" action="index.html" method="post">
-    <div class="one-half column">
-        <h3>Greet friend first version</h3>
+    <form class="" action="/greet" method="post">
+        <div class="one-half column">
+            <h3>Greet friend first version</h3>
 
-        <p>Name: <input class="u-full-width" name="specifyName" id="specifyName" placeholder="Please enter your name"></p>
-        Choose language?<br>
-        <input type="radio" name="languages" value="Sotho" id="seSotho">seSotho
-        <input type="radio" name="languages" value="Xhosa" id="seiXhosa">isiXhosa
-        <input type="radio" name="languages" value="English" id="English">English<br>
-        <br>
-        <div class="row">
-            <div class="messages">
-                <pre id="specificNameDisplay"></pre>
-                <pre id="totalNumOfGreetings"></pre>
-                <input id="resetButton" class="button-primary" type="reset" value="reset" />
-            </div>
+            <p>Name: <input class="u-full-width" name="specifyName" id="specifyName" placeholder="Please enter your name"></p>
+            Choose language?<br>
+            <input type="radio" name="languages" value="Sotho" id="seSotho">seSotho
+            <input type="radio" name="languages" value="Xhosa" id="seiXhosa">isiXhosa
+            <input type="radio" name="languages" value="English" id="English">English<br>
+            <br>
+
             <div class="row">
-                <input id="okButton" class="submit" type="button" name="button" value="submit">
-                <button id="backButton" class="button-primary" type="button" name="button"><a href="/">Back</a></button>
+                <div class="messages">
+                    {{#each greetedPerson}}
+                    <pre id="specificNameDisplay">{{this.name}}</pre>
+                    {{/each}}
+                    <pre id="totalNumOfGreetings"></pre>
+                    <input id="resetButton" class="button-primary" type="reset" value="reset"/>
+                </div>
+
+                <div class="row">
+                    <button id="okButton" class="submit" type="submit" name="submit" value="submit">Submit</button>
+                    <button id="backButton" class="button-primary" type="button" name="button"><a href="/">Back</a></button>
+                </div>
             </div>
         </div>
-      </form>
-    </div>
+    </form>
 </div>
