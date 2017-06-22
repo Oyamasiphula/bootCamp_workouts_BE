@@ -5,36 +5,53 @@ var express = require('express'),
 
 
 var app = express();
-var jsonParser = bodyParser.json()
 
 app.engine("handlebars", exphbs({
     defaultLayout: "main.handlebars"
 }));
-app.set("view engine", "handlebars");
 
-var urlencodedParser = bodyParser.urlencoded({
-    extended: false
-})
+app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+
 app.get("/", (req, res) => {
+    console.log(req.body.submit);
     res.render("home");
 });
+
 //eg. dynamically routing
 app.get("/home", (req, res) => {
     res.redirect("/");
 });
 
 app.get("/greet", (req, res) => {
+    //var name = req.body.specifyName;
+    //console.log(name);
+    //console.log(req.body.submit);
     res.render("greet");
 });
 
+var greetedPeople = [];
+
 app.post("/greet", (req, res) => {
+
     var name = req.body.specifyName;
-    console.log(name);
-    res.send(name);
-})
+    var language = req.body.languages;
+    var count = 0;
+
+    greetedPeople.push({
+        "name": name
+    });
+
+    console.log(greetedPeople);
+    res.render('greet', {
+      greetedPerson : greetedPeople
+    });
+});
 
 var port = process.env.port || 3000;
 
