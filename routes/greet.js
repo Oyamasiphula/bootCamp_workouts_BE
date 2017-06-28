@@ -1,12 +1,17 @@
 var greetedPerson = {};
 
 exports.greetFactory = (langRadioOpt, name) => {
+    if (name === "") {
+      alert("Please enter a valid name");
+      return
+    }
+
     var counter = (name) => {
         if (greetedPerson[name] === undefined) {
             greetedPerson[name] = 0;
         }
         greetedPerson[name] += 1;
-        return greetedPerson.name;
+        return greetedPerson[name];
     }
 
     var greet = () => {
@@ -25,5 +30,4 @@ exports.greetFactory = (langRadioOpt, name) => {
           counter,
           greet
     };
-
 }
