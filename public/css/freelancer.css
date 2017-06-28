@@ -151,12 +151,13 @@ section {
 }
 
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+    float: right;
     color: #FFF;
     border-color: #33C3F0;
-
 }
+
 a {
-     color: #402222;
+    color: #402222;
 }
 
 .formButt {
@@ -305,8 +306,12 @@ table, th, td {
     font-size: 20px;
     text-align: -webkit-center;
 }
+pre#specificNameDisplay {
 
+}
 pre {
+    text-align: -webkit-center;
+    display: flex;
     margin-bottom: -0.5rem;
     font-size: initial;
     background-color: rgba(0, 100, 0, 0.41);
