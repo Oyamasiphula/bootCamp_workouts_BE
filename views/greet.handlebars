@@ -18,12 +18,14 @@
                           {{this}}
                         </pre>
                     {{/greetedPerson}}
-
-                      {{#counter}}
-                      <pre id="totalNumOfGreetings">
+                    {{#info}}
+                        <p><strong>FLASH!</strong> {{ info }}</p>
+                    {{/info}}
+                    {{#counter}}
+                        <pre id="totalNumOfGreetings">
                         {{this}}
                       </pre>
-                        {{/counter}}
+                    {{/counter}}
 
                     <input id="resetButton" class="button-primary" type="reset" value="reset" />
                 </div>
