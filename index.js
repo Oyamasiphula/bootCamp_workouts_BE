@@ -2,7 +2,6 @@ var express = require('express'),
     exphbs = require('express-handlebars'),
     session = require('express-session'),
     bodyParser = require('body-parser'),
-    bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     flash = require('express-flash'),
     greetFuncFile = require("./routes/greet-routes.js");
@@ -21,7 +20,6 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 // parse application/json
-app.use(bodyParser.json())
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
     secret: 'keyboard cat',
@@ -31,12 +29,7 @@ app.use(session({
         secure: true
     }
 }))
-// app.use(exprcookieParser('keyboard cat'));
-// app.use(express.session({
-//     cookie: {
-//         maxAge: 60000
-//     }
-// }));
+
 app.use(flash());
 
 app.get("/", (req, res) => {
@@ -50,6 +43,11 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/greet", (req, res) => {
+  for (var key in session) {
+    if (object.hasOwnProperty(key)) {
+      console.log(session);
+    }
+  }
   var info = req.flash('info', 'Welcome')
     res.render("greet", {
       info : info
@@ -58,7 +56,7 @@ app.get("/greet", (req, res) => {
 
 app.post("/greet", greetFuncFile.greetRouter);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 app.listen(port, () => {
     console.log('listening on *:' + port);

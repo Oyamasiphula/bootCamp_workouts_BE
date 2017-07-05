@@ -10,7 +10,12 @@ exports.greetFactory = (langRadioOpt, name) => {
         if (greetedPerson[name] === undefined) {
             greetedPerson[name] = 0;
         }
+        if (name === "") {
+          conalole.log("Please enter a valid name");
+          return
+        }
         greetedPerson[name] += 1;
+        console.log(greetedPerson[name]);
         return greetedPerson[name];
     }
 

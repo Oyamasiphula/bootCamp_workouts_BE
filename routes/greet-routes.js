@@ -4,6 +4,7 @@ exports.greetRouter = (req, res) => {
 
     var actualName = req.body.specifyName;
     var actualLang = req.body.languages;
+    console.log(actualName);
 
     res.render('greet', {
         greetedPerson : greetPersonUtil.greetFactory(actualLang, actualName).greet(),
