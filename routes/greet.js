@@ -8,7 +8,8 @@ exports.greetFactory = (langRadioOpt, name) => {
 
     var counter = (name) => {
         if (greetedPerson[name] === undefined) {
-            greetedPerson[name] = 0;
+            // greetedPerson[name] = 0;
+            return greetedPerson[name] = 0;
         }
         greetedPerson[name] += 1;
         return greetedPerson[name];
