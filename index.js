@@ -43,11 +43,7 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/greet", (req, res) => {
-  for (var key in session) {
-    if (object.hasOwnProperty(key)) {
-      console.log(session);
-    }
-  }
+  console.log(session);
   var info = req.flash('info', 'Welcome')
     res.render("greet", {
       info : info
