@@ -43,14 +43,13 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/greet", (req, res) => {
-  console.log(session);
   var info = req.flash('info', 'Welcome')
     res.render("greet", {
       info : info
     });
 });
 
-app.post("/greet", greetFuncFile.greetRouter);
+app.post("/greet" ,greetFuncFile.greetRouter);
 
 var port = process.env.PORT || 3001;
 
