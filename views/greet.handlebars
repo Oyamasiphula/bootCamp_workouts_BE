@@ -19,9 +19,12 @@
                           {{this}}
                         </pre>
           {{/greetedPerson}}
-          {{#info}}
-            <p><strong>FLASH!</strong> {{ info }}</p>
-          {{/info}}
+          {{#if message}}
+            <div class="">
+              {{this.message}}
+            </div>
+          {{/if}}
+
           {{#counter}}
             <pre id="totalNumOfGreetings">
                         {{this}}
