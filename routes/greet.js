@@ -1,4 +1,3 @@
-
 var counterVal = 0;
 
 
@@ -21,6 +20,7 @@ exports.greetFactory = (langRadioOpt, name) => {
   }
 
   let greet = (name) => {
+
     if (langRadioOpt === "Sotho") {
       return "Dumela, " + name;
     };
