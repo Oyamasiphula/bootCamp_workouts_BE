@@ -20,9 +20,9 @@
                         </pre>
           {{/greetedPerson}}
           {{#if message}}
-            <div class="">
-              {{this.message}}
-            </div>
+            <pre id="isValidNameVal">
+              <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{this.message}} <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            </pre>
           {{/if}}
 
           {{#counter}}
