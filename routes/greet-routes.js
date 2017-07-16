@@ -4,13 +4,18 @@ exports.greetRouter = (req, res, next) => {
 
   var actualName = req.body.specifyName;
   var actualLang = req.body.languages;
-  
+
   // Set a flash message by passing the key, followed by the value, to req.flash().
-  req.flash('message', 'Please enter a valid name!');
+  if (actualName.length <= 3) {
+    req.flash('message', 'Please enter valid name');
+    res.render('greet', {
+      message: req.flash('message')
+    });
+    return
+  };
 
   res.render('greet', {
     greetedPerson: greetPersonUtil.greetFactory(actualLang, actualName).greet(actualName),
-    counter: greetPersonUtil.greetFactory(actualLang, actualName).counter(actualName),
-    message: req.flash('message')
+    counter: greetPersonUtil.greetFactory(actualLang, actualName).counter(actualName)
   });
-}
+};
