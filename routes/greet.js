@@ -15,7 +15,7 @@ exports.greetFactory = (langRadioOpt, name) => {
       greetedPerson[name] = counterVal;
     }
     greetedPerson[name] = greetedPerson[name] + 1;
-    console.log(greetedPerson);
+    // console.log(greetedPerson);
     return greetedPerson[name];
   }
 
@@ -42,7 +42,6 @@ exports.greetFactory = (langRadioOpt, name) => {
   };
 
   let timesEachPersonGreeted = (name) => {
-    console.log(greetedPerson);
     return greetedPerson[name];
   };
 
