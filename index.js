@@ -3,10 +3,16 @@ var express = require('express'),
   session = require('express-session'),
   flash = require('connect-flash'),
   bodyParser = require('body-parser'),
+  mongoose = require('mongoose'),
   cookieParser = require('cookie-parser'),
   greetFuncFile = require("./routes/greet-routes.js"),
-  greetUtil = require("./routes/greet.js");
+  greetUtil = require("./routes/greet.js"),
+  greetDataMod = require('./dataPart/Greet.model');
 
+var db = 'mongodb://localhost/greet';
+
+mongoose.connect(db, { useMongoClient: true })
+// mongoose.connect(db);
 var app = express();
 
 app.engine("handlebars", exphbs({
