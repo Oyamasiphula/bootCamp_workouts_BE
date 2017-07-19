@@ -10,7 +10,7 @@ var express = require('express'),
   greetDataMod = require('./dataPart/Greet.model');
 
 var db = 'mongodb://localhost/greet';
-
+    console.log(db);
 mongoose.connect(db, { useMongoClient: true })
 // mongoose.connect(db);
 var app = express();
