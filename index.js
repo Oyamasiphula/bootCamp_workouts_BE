@@ -6,13 +6,14 @@ var express = require('express'),
   mongoose = require('mongoose'),
   cookieParser = require('cookie-parser'),
   greetFuncFile = require("./routes/greet-routes.js"),
-  greetUtil = require("./routes/greet.js"),
-  greetDataMod = require('./dataPart/Greet.model');
+  greetUtil = require("./routes/greet.js");
 
 var db = 'mongodb://localhost/greet';
-    console.log(db);
-mongoose.connect(db, { useMongoClient: true })
-// mongoose.connect(db);
+
+mongoose.connect(db, {
+  useMongoClient: true
+})
+
 var app = express();
 
 app.engine("handlebars", exphbs({
