@@ -12,7 +12,9 @@ var db = 'mongodb://localhost/greet';
 
 mongoose.connect(db, {
   useMongoClient: true
-})
+});
+
+mongoose.Promise = Promise;
 
 var app = express();
 
@@ -55,11 +57,8 @@ app.get("/home", (req, res) => {
 });
 
 
-app.get("/greet", (req, res) => {
-  res.render("greet")
-});
-
-app.post("/greet", greetFuncFile.greetRouter);
+app.get("/greet", greetFuncFile.getGreet)
+app.post("/greet", greetFuncFile.insertGreetData);
 
 var port = process.env.PORT || 3001;
 
